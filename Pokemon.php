@@ -8,11 +8,10 @@ class Pokemon {
 	public $weakness;
 	public $resistance;
 
-	public function __construct($name, $type, $HP, $health, $attacks, $weakness, $resistance) {
+	public function __construct($name, $type, $hp, $attacks, $weakness, $resistance) {
 		$this->name = $name;
 		$this->type = $type;
 		$this->hp = $hp;
-		$this->health = $health;
 		$this->attacks = $attacks;
 		$this->weakness = $weakness;
 		$this->resistance = $resistance;
@@ -21,7 +20,16 @@ class Pokemon {
 	public function __toString() {
 		return json_encode($this);
 	}
-	public function calcWeakness() {}
-	public function calcResistance() {}
+
+	public function attack($attack, $other) {
+		if ($this->type->type == $other->weakness->type) {
+			$dmg = ($attack->attackDmg) * ($other->weakness->multi);
+		} else if ($this->type->type == $other->resistance->type) {
+			$dmg = ($attack->attackDmg) + ($other->resistance->reduce);
+		}
+		return $dmg;
+	}
+
 	public function calcDmg() {}
+
 }

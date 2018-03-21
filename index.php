@@ -14,4 +14,7 @@ echo '<pre>';
 print_r($Pikachu);
 print_r($Charmeleon);
 
+$dmg = $Pikachu->attack($Pikachu->attacks[1],$Pikachu);
+echo $dmg;
+
  ?>
