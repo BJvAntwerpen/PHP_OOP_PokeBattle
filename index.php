@@ -10,11 +10,24 @@ require 'Type.php';
 
 $Pikachu = new Pikachu('Pikachu');
 $Charmeleon = new Charmeleon('Charmeleon');
-echo '<pre>';
-print_r($Pikachu);
-print_r($Charmeleon);
 
-$dmg = $Pikachu->attack($Pikachu->attacks[1],$Pikachu);
-echo $dmg;
+$pikachuAttack = 1;
+$charmeleonAttack = 0;
+
+echo '<pre>';
+//print_r($Pikachu);
+//print_r($Charmeleon);
+echo 'Pikachu has ' . $Pikachu->hp . 'hp.<br>';
+echo 'Charmeleon has ' . $Charmeleon->hp . 'hp.<br>';
+echo '<br>';
+echo 'Pikachu used ' . $Pikachu->attacks[$pikachuAttack]->attackName . '.<br>';
+$dmg = $Pikachu->attack($Pikachu->attacks[$pikachuAttack],$Charmeleon);
+echo 'Pikachu did ' . $dmg . ' damage.<br>';
+echo 'Charmeleon has ' . $Charmeleon->hp . ' hp left.<br>';
+echo '<br>';
+echo 'Charmeleon used ' . $Charmeleon->attacks[$charmeleonAttack]->attackName . '.<br>';
+$dmg = $Charmeleon->attack($Charmeleon->attacks[$charmeleonAttack],$Pikachu);
+echo 'Charmeleon did ' . $dmg . ' damage.<br>';
+echo 'Pikachu has ' . $Pikachu->hp . ' hp left.<br>';
 
  ?>

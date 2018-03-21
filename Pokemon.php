@@ -26,10 +26,15 @@ class Pokemon {
 			$dmg = ($attack->attackDmg) * ($other->weakness->multi);
 		} else if ($this->type->type == $other->resistance->type) {
 			$dmg = ($attack->attackDmg) + ($other->resistance->reduce);
+		} else {
+			$dmg = $attack->attackDmg;
 		}
+		$this->calcDmg($dmg, $other);
 		return $dmg;
 	}
 
-	public function calcDmg() {}
+	public function calcDmg($dmg, $other) {
+		$other->hp -= $dmg;
+	}
 
 }
