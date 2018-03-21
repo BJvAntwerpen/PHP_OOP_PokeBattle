@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>php PokeBattle</title>
-</head>
-<body>
+<?php
 
-<h1>Hi</h1>
+require 'Pokemon.php';
+require 'Pikachu.php';
+require 'Charmeleon.php';
+//require 'Attack.php';
 
-</body>
-</html>
+$Pikachu = new Pikachu('Pikachu');
+$Charmeleon = new Charmeleon('Charmeleon');
+
+print_r($Pikachu);
+print_r($Charmeleon);
+
+ ?>
