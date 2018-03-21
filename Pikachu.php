@@ -1,9 +1,9 @@
 <?php
 
 class Pikachu extends Pokemon {
+	public $name;
 	public $type;
-	public $HP = 60;
-	public $health = 60;
+	public $hp;
 	public $attacks;
 	public $weakness;
 	public $resistance;
@@ -13,6 +13,7 @@ class Pikachu extends Pokemon {
 		$this->attacks = array(new Attack('Electric Ring', 50), new Attack('Pika Punch', 20));
 		$this->weakness = new Weakness('Fire', 1.5);
 		$this->resistance = new resistance('Steel', -20);
-		parent::__construct($name, $this->type, $this->HP, $this->health, $this->attacks, $this->weakness, $this->resistance);
+		$this->name = $name;
+		$this->hp = 60;
 	}
 }

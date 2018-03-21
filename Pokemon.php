@@ -4,7 +4,6 @@ class Pokemon {
 	public $name;
 	public $type;
 	public $HP;
-	public $health;
 	public $attacks;
 	public $weakness;
 	public $resistance;
