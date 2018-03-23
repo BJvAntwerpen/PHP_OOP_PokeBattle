@@ -4,6 +4,7 @@ class Pokemon {
 	public $name;
 	public $type;
 	public $hp;
+	public $health;
 	public $attacks;
 	public $weakness;
 	public $resistance;
@@ -12,6 +13,7 @@ class Pokemon {
 		$this->name = $name;
 		$this->type = $type;
 		$this->hp = $hp;
+		$this->health = $hp;
 		$this->attacks = $attacks;
 		$this->weakness = $weakness;
 		$this->resistance = $resistance;
@@ -28,7 +30,7 @@ class Pokemon {
 		} else if ($this->type->type == $other->resistance->type) {
 			$dmg = ($attack->attackDmg) + ($other->resistance->reduce);//reduce is a negative value
 		}
-		$other->hp -= $dmg;
+		$other->health -= $dmg;
 		return $dmg;
 	}
 
