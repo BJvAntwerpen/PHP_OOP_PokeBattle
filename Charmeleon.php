@@ -1,12 +1,6 @@
 <?php
 
 class Charmeleon extends Pokemon {
-	public $name;
-	public $type;
-	public $hp;
-	public $attacks;
-	public $weakness;
-	public $resistance;
 
 	public function __construct($name) {
 		$this->type = new Type('Fire');
