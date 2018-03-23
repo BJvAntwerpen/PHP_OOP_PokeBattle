@@ -11,8 +11,8 @@ require 'Type.php';
 $Pikachu = new Pikachu('Pikachu');
 $Charmeleon = new Charmeleon('Charmeleon');
 
-$pikachuAttack = 1;
-$charmeleonAttack = 0;
+$pikachuAttack = 0;
+$charmeleonAttack = 1;
 
 echo '<pre>';
 //print_r($Pikachu);

@@ -22,19 +22,14 @@ class Pokemon {
 	}
 
 	public function attack($attack, $other) {
+		$dmg = $attack->attackDmg;
 		if ($this->type->type == $other->weakness->type) {
 			$dmg = ($attack->attackDmg) * ($other->weakness->multi);
 		} else if ($this->type->type == $other->resistance->type) {
-			$dmg = ($attack->attackDmg) + ($other->resistance->reduce);
-		} else {
-			$dmg = $attack->attackDmg;
+			$dmg = ($attack->attackDmg) + ($other->resistance->reduce);//reduce is a negative value
 		}
-		$this->calcDmg($dmg, $other);
-		return $dmg;
-	}
-
-	public function calcDmg($dmg, $other) {
 		$other->hp -= $dmg;
+		return $dmg;
 	}
 
 }
