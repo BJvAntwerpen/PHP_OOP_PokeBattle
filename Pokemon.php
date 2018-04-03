@@ -30,8 +30,11 @@ class Pokemon {
 		} else if ($this->type->type == $other->resistance->type) {
 			$dmg = ($attack->attackDmg) + ($other->resistance->reduce);//reduce is a negative value
 		}
-		$other->health -= $dmg;
+		$this->calcHealth($dmg, $other);
 		return $dmg;
 	}
 
+	private function calcHealth($dmg, $other) {
+		$other->health -= $dmg;
+	}
 }
