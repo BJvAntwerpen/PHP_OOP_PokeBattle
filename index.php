@@ -9,9 +9,9 @@ require 'Weakness.php';
 require 'Type.php';
 
 $Pikachu = new Pikachu('Pikachu');
-$Charmeleon = new Charmeleon('Charmeleon');
-
 $pikachuAttack = 0;
+
+$Charmeleon = new Charmeleon('Charmeleon');
 $charmeleonAttack = 1;
 
 echo '<pre>';
